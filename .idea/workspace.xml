@@ -22,10 +22,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="435" />
-    <option name="y" value="426" />
-    <option name="width" value="1126" />
-    <option name="height" value="531" />
+    <option name="x" value="211" />
+    <option name="y" value="48" />
+    <option name="width" value="1442" />
+    <option name="height" value="998" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -67,6 +67,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
