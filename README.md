@@ -1,10 +1,10 @@
 # mysale
 
-数据库my_sale
+<h2>数据库my_sale</h2>
 create database my_sale default charset=utf8;
 
 
-项目主要目录：
+<h2>项目主要目录：</h2>
 1.前端页面：
 html --> 放在对应板块
 static --> 注意js/css/images的路径
