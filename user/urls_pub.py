@@ -6,5 +6,5 @@ urlpatterns = [
     url(r'^test/$',views_pub.test),
 
     url(r'index/$',views_pub.index),
-    url(r'publish/$',views_pub.publish)
+    url(r'publish/$',views_pub.publish),
 ]
