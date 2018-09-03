@@ -9,8 +9,12 @@ def test(request):
 
 
 def index(request):
-    pub = Publish.objects.all()
+    # pub = Publish.objects.all()
+    #
+    # for pu in pub:
+    #     context = {'title':pu.title}
+    return render(request, 'pub/index.html')
 
-    for pu in pub:
-        context = {'title':pu.title}
-    return render(request, 'pub/index.html',context)
+
+def publish(request):
+    return render(request, 'pub/publish.html')
