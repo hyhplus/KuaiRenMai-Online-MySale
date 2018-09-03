@@ -1,14 +1,36 @@
 from django.db import models
+from hashlib import md5
 
 # Create your models here.
 # 用户表，基本信息，登陆注册
 class User(models.Model):
     username = models.CharField(max_length=20)
     password = models.CharField(max_length=64)
-    tel = models.CharField(max_length=11)
-    qq = models.CharField(max_length=11)
-    wechat = models.CharField(max_length=20)
-    gold = models.IntegerField()
+    tel = models.CharField(max_length=11, default='110')
+    qq = models.CharField(max_length=11, default='110')
+    wechat = models.CharField(max_length=20, default='110')
+    gold = models.IntegerField(default=0)
+
+    def create(self, username, password):
+        self.username = username
+        self.password = password
+        self.save()
+
+    @classmethod
+    def findName(cls, username, password=''):
+        names = User.objects.filter(username = username)
+        if password != '':
+            if len(names) >= 1:
+                pwd = names[0].password
+                md = md5()
+                md.update(password.encode())
+                if md.hexdigest() == pwd:
+                    return True
+            return False
+        elif len(names) >= 1:
+            return False
+        else:
+            return True
 
     def __str__(self):
         return self.username
@@ -21,11 +43,11 @@ class User(models.Model):
 
 # 用户个人信息页面，个人信息详情
 class UserDetail(models.Model):
-    company = models.CharField(max_length=32)
-    brand = models.CharField(max_length=20)
-    job = models.CharField(max_length=20)
+    company = models.CharField(max_length=32, default='')
+    brand = models.CharField(max_length=20, default='')
+    job = models.CharField(max_length=20, default='')
 
-    collect = models.CharField(max_length=64)
+    collect = models.CharField(max_length=64, default='')
 
     user = models.OneToOneField("User", on_delete=models.CASCADE)
 

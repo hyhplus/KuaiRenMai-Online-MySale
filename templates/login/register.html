@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="/static/css/bootstrap.css">
+		<link rel="stylesheet" href="/static/css/main.css">
+
+
+				<link rel="stylesheet" href="/static/css/main.main.css">
+
+				<link rel="stylesheet" href="/static/css/y.css">
+		  <link rel="icon" type="image/x-icon" href="favicon.ico">
+		<title>BD之家</title>
+
+<meta name="keywords" content="默认关键词" />
+<meta name="description" content="默认描述" />
+
+	</head>
+
+	<body>
+		<div class="c-top-bar">
+			<div class="c-top-bar__nav">
+
+<div style="float:left;color: #fff;font-size: 14px;margin-top: 6px;">找合作,上BD之家
+</div>
+
+				<ul class="list-inline c-top-bar__nav-list">
+
+															<li class="list-inline-item c-top-bar__nav-item">
+						<a class="c-top-bar__nav-link" href="http://www.mybdhome.com/login.html">登录</a>
+					</li>
+					<li class="list-inline-item c-top-bar__nav-item">
+						<a class="c-top-bar__nav-link" href="http://www.mybdhome.com/register.html">注册</a>
+					</li>
+
+
+
+				</ul>
+
+
+			</div>
+		</div>
+		<header class="c-page-header">
+			<nav class="c-page-header__nav">
+				<a class="c-page-header__logo" href="http://www.mybdhome.com/"><img class="c-page-header__logo-img" src="img/logo.png" alt="企业Logo"></a>
+				<ul class="list-inline c-page-header__nav-list">
+					<li class="list-inline-item c-page-header__nav-item ">
+						<a class="c-page-header__nav-link" href="http://www.mybdhome.com/">异业大厅</a>
+					</li>
+					<li class="list-inline-item c-page-header__nav-item ">
+						<a class="c-page-header__nav-link" href="advertiser.html">广告主</a>
+					</li>
+					<li class="list-inline-item c-page-header__nav-item ">
+						<a class="c-page-header__nav-link" href="channel.html">渠道主</a>
+					</li>
+				</ul>
+				<form class="c-page-header__search-form" action="http://www.mybdhome.com/" method="get">
+					<input type="hidden" name="w" value="search" />
+					<input class="c-page-header__search-field" placeholder="请输入您想搜索的内容" name="so" value=""><button class="c-page-header__search-submit" style="
+    color: #ffffff;
+"> </button></form>
+				<a class="c-page-header__new-post" href="release.html">免费发布合作</a>
+			</nav>
+		</header>
+
+
+		<main class="page-main page-main--auth">
+			<div class="c-auth">
+				<div class="c-auth__header">
+					<h2 class="c-auth__title">注册BD之家</h2></div>
+				<div class="c-auth__content">
+					<form class="c-auth__form" method="post" action="/register_handler/">
+                        {% csrf_token %}
+						<div class="c-auth__form-group c-auth__form-group--phone"><input class="c-auth__input" placeholder="用户名" name="username" id="zphone" type="text" required></div>
+						<div class="c-auth__form-group c-auth__form-group--password"><input class="c-auth__input" placeholder="密码" name="password" id="zpass" type="password" onkeydown=KeyDown() required></div>
+                        <div class="c-auth__form-group c-auth__form-group--password"><input class="c-auth__input" placeholder="密码确认" name="copy_pwd" id="zpass2" type="password" onkeydown=KeyDown() required></div>
+
+
+
+								<div class="c-auth__form-group c-auth__form-group--action" style="text-align: center;color: red;display: none;"  id="p1">
+
+									<span id="ts">
+										密码错误
+									</span>
+
+								</div>
+
+
+							<div class="c-auth__form-group c-auth__form-group--action">
+							    <input type="submit" class="btn c-auth__submit" value="注册" style="color: #ffffff;">
+
+                                </input>
+
+							</div>
+
+					</form>
+
+
+
+
+
+
+	<script>
+		function KeyDown()
+{
+
+  if (event.keyCode == 13)
+  {
+  	logw();
+  }
+}
+
+
+		function logw(){
+
+
+
+
+			if($("#zphone").val()==''){
+
+			    $("#p1").show();
+			    $("#ts").text("请填写手机号!");
+			}else{
+
+							if($("#zpass").val()==''){
+
+			    $("#p1").show();
+			    $("#ts").text("请填写密码!");
+
+			}else{
+				$("#ts").text("注册中!");
+
+
+
+
+		    var zzphone = $("#zphone").val();
+			var zzpass = $("#zpass").val();
+
+
+	$.post("logw.php", { zphone: ""+ zzphone+"", zpass: ""+zzpass+"" },
+   function(data){
+
+
+     if(data == 1){
+     	         $("#p1").show();
+     $("#ts").text("密码错误");
+
+     }
+
+
+     if(data == 2){
+     	         $("#p1").show();
+     $("#ts").text("注册成功");
+     top.location="http://www.mybdhome.com/user/";
+     }
+
+
+   });
+
+
+
+
+
+
+
+
+
+
+			}
+
+
+			}
+
+
+
+		}
+
+
+				  $("#p11").hide();
+	</script>
+
+
+
+
+
+
+					<div class="c-auth__more">
+						<a class="c-auth__forgot-password" href="upass.html"></a><span class="c-auth__register"><span class="c-auth__register-tip">还未注册</span>
+						<a class="c-auth__link" href="login/register.html"></a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="c-page-footer">
+			<nav class="c-page-footer__row c-page-footer__about">
+				<a class="c-page-footer__text c-page-footer__link" href="http://www.mybdhome.com/">首页&nbsp;&#47;</a>
+				<a class="c-page-footer__text c-page-footer__link" href="http://www.mybdhome.com/disclaimer.html">&nbsp;免责声明&nbsp;&#47;</a>
+				<a class="c-page-footer__text c-page-footer__link" href="http://www.mybdhome.com/about.html">&nbsp;关于我们</a>
+			</nav>
+			<p class="c-page-footer__row c-pagte-footer__contact"><span class="c-page-footer__contact-title c-page-footer__text">联系我们&nbsp;&#124;</span><span class="c-page-footer__text">&nbsp;客服QQ:&nbsp;623690500&nbsp;&#47;</span><span class="c-page-footer__text">&nbsp;联系电话:&nbsp;027-87780143 （广告推销勿扰）&nbsp;&#47;</span><span class="c-page-footer__text">&nbsp;地址:&nbsp;武汉市洪山区书城路17号&nbsp;</span></p>
+
+
+
+          <hr class="c-page-footer__separator">
+			<p class="c-page-footer__row c-page-footer__certification"><span class="c-page-footer__text">武汉优上科技有限公司&nbsp;&#124;</span><span class="c-page-footer__text">&nbsp;鄂ICP备17005716号-2</span></p>
+		</footer>
+		<script src="/static/js/jquery.js"></script>
+		<script src="/static/js/popper.js"></script>
+		<script src="/static/js/bootstrap.js"></script>
+
+
+<span style="display: none;">
+<!-- 统计代码 -->
+<script src="https://s13.cnzz.com/z_stat.php?id=1269900004&web_id=1269900004" language="JavaScript"></script>
+
+
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?42bf2023872596714259937eaebb4ab5";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</span>
+
+
+	</body>
+
+</html>
