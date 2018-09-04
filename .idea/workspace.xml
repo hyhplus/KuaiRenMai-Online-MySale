@@ -58,7 +58,7 @@
       <file leaf-file-name="account.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/user/account.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1045">
+            <state relative-caret-position="-850">
               <caret line="83" column="32" lean-forward="true" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
             </state>
           </provider>
@@ -119,8 +119,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="393" />
-    <option name="y" value="56" />
+    <option name="x" value="300" />
+    <option name="y" value="380" />
     <option name="width" value="1287" />
     <option name="height" value="592" />
   </component>
@@ -234,7 +234,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="393" y="56" width="1287" height="592" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3270142" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -243,7 +242,7 @@
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49763033" visible="true" weight="0.42456895" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49763033" visible="true" weight="0.40301725" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -649,7 +648,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/user/account.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1045">
+        <state relative-caret-position="-850">
           <caret line="83" column="32" lean-forward="true" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
         </state>
       </provider>
