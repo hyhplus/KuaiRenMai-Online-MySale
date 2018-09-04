@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from user.models import UserDetail
 
 # Create your views here.
 def test(request):
@@ -7,7 +8,19 @@ def test(request):
 
 #账户设置
 def account(request):
-    return render(request, 'user/account.html')
+    username=request.POST.get('username')
+    industry=request.POST.get('industry')
+    company=request.POST.get('company')
+    brand=request.POST.get('brand')
+    job=request.POST.get('job')
+    name=request.POST.get('name')
+    intro=request.POST.get('intro')
+    u=UserDetail()
+
+
+
+
+    return render(request,'user/account.html')
 
 #我的收藏
 def colletion(requset):
@@ -45,3 +58,11 @@ def walllet(request):
 #发布合作信息
 def release(request):
     return render(request,'user/release.html')
+
+#帐号设置的职业信息
+def career(requert):
+    return render(requert,'user/career.html')
+
+#帐号设置的修改密码
+def password(requert):
+    return render(requert,'user/password.html')
