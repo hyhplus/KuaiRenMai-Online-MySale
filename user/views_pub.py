@@ -46,7 +46,7 @@ def publish_handler(request):
         reward=0
 
 
-
+    #判断二级下拉分类
     if sort_1 == "1":
         if sort_2 == "0":
             sort.pet=1
@@ -101,25 +101,24 @@ def publish_handler(request):
             sort.live=4
 
     #return HttpResponse(sort.pet)
-     #try:
-    publish=Publish()
-    publish.title=title
-    publish.image=image
-    publish.tel=tel
-    publish.qq=qq
-    publish.wechat=wechat
-    #publish.start_time=start_time
-    publish.end_time=end_time
-    publish.reward=reward
-    publish.is_top=is_top
-    publish.is_flush=is_flush
-    publish.detail=detail
-    sort.area=area
-    publish.save()
-    sort.save()
-    return render(request, 'pub/index.html')
-    #except Exception as e:
-        #return render(request, 'pub/publish.html')
+    try:
+        publish=Publish()
+        publish.title=title
+        publish.image=image
+        publish.tel=tel
+        publish.qq=qq
+        publish.wechat=wechat
+        publish.end_time=end_time
+        publish.reward=reward
+        publish.is_top=is_top
+        publish.is_flush=is_flush
+        publish.detail=detail
+        sort.area=area
+        publish.save()
+        sort.save()
+        return render(request, 'pub/index.html')
+    except Exception as e:
+        return render(request, 'pub/publish.html')
 
 
 
