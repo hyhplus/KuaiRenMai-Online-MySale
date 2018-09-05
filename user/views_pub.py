@@ -16,6 +16,7 @@ def index(request):
     return render(request, 'pub/index.html')
 
 
+
 def publish(request):
     return render(request, 'pub/publish.html')
 

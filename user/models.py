@@ -10,7 +10,17 @@ class User(models.Model):
     qq = models.CharField(max_length=11, default='110')
     wechat = models.CharField(max_length=20, default='110')
     gold = models.IntegerField(default=0)
+#下面的是后端表
+    top1=models.CharField(max_length=200)
+    top2=models.CharField(max_length=200)
+    qqname=models.CharField(max_length=20)
+    logopic=models.ImageField()
+    lunpic1=models.ImageField()
+    lunpic2=models.ImageField()
+    lastpic=models.ImageField()
 
+
+#到这里为止
     def create(self, username, password):
         self.username = username
         self.password = password
@@ -66,6 +76,7 @@ class Sort(models.Model):
     market = models.IntegerField(default=0)
     find = models.IntegerField(default=0)
     connect = models.IntegerField(default=0)
+    live = models.IntegerField(default=0)
     area = models.IntegerField(default=0)
 
     class Meta:
@@ -79,9 +90,11 @@ class Publish(models.Model):
     reward = models.IntegerField()
 
     title = models.CharField(max_length=32)
+    shopkeepername =models.CharField(max_length=50)
     detail = models.TextField()
     image = models.ImageField()
     tel = models.CharField(max_length=11)
+    shopclass = models.CharField(max_length=50) #用来记录商家需求哪一类，好用来提取到页面显示
 
     count = models.IntegerField(default=0)
 

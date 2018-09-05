@@ -57,7 +57,7 @@
 		</div>
 		<header class="c-page-header">
 			<nav class="c-page-header__nav">
-				<a class="c-page-header__logo" ><img class="c-page-header__logo-img" src="img/first.jpeg" width="120" height="150" alt="首页"></a>
+				<a class="c-page-header__logo" ><img class="c-page-header__logo-img" src={{User.objects.filter(name=logopic).last()}}{{User.objects.filter(name=logopic).last()}} width="100" height="100" alt="首页"></a>
 				<ul class="list-inline c-page-header__nav-list">
 					<li class="list-inline-item c-page-header__nav-item is-active">
 						<a class="c-page-header__nav-link" href="http://www.mybdhome.com/"></a>
@@ -82,8 +82,8 @@
 			<div class="carousel slide mx-auto c-carousel" id="carousel-banner" data-ride="carousel">
 				
 				<div class="carousel-inner c-carousel__inner">
-				<div class="active carousel-item c-carousel__item"><img class="d-block w-100 c-carousel__img" src="img/Broadcast1.jpeg" alt=""width="1280" height="265"></div>
-				<div class="carousel-item c-carousel__item"><img class="d-block w-100 c-carousel__img" src="img/Broadcast2.jpeg" alt=""width="1280" height="265"></div>
+				<div class="active carousel-item c-carousel__item"><img class="d-block w-100 c-carousel__img" src={{User.objects.filter(name=lunpic1).last()}}{{User.objects.filter(name=lunpic1).last()}} alt=""width="1280" height="265"></div>
+				<div class="carousel-item c-carousel__item"><img class="d-block w-100 c-carousel__img" src={{User.objects.filter(name=lunpic2).last()}}{{User.objects.filter(name=lunpic2).last()}} alt=""width="1280" height="265"></div>
 					<!--<div class="carousel-item c-carousel__item"><img class="d-block w-100 c-carousel__img" src="img/bd1.png" alt=""></div>
 					<div class="carousel-item c-carousel__item"><img class="d-block w-100 c-carousel__img" src="img/bd1.png" alt=""></div>-->
 				</div>
@@ -177,10 +177,10 @@
 						<ul class="list-inline c-trade-sort__item-list">
 							
 							
-									<a class="list-inline-item c-trade-sort__item" href="http://www.mybdhome.com/?x1=&x2=&x3=&x4=&x5=2&x11="/>
+									<a class="list-inline-item c-trade-sort__item" href="#"/>
 				<label class="c-trade-sort__item-name" >进行中</label>
 					
-							</a>	<a class="list-inline-item c-trade-sort__item" href="http://www.mybdhome.com/?x1=&x2=&x3=&x4=&x5=3&x11="/>
+							</a>	<a class="list-inline-item c-trade-sort__item" href="#"/>
 				<label class="c-trade-sort__item-name" >圆满结束</label>
 					
 
@@ -201,11 +201,8 @@
 						
 						
 				
-				
-				
-				
-				
-				
+		{% for a in Publish  %}
+			{%if %}
 				<li class="c-trade-card-item">
 					<!-- 绝对定位，卡片左上角ribbon-->
 							<div class="c-trade-card-item__recommendation" data-recommendation="true">
@@ -218,32 +215,33 @@
 							<div class="c-trade-card">
 								<!-- 卡片中靠左，包括figure和info overview-->
 								<div class="c-trade-card__overview">
-									<figure class="c-trade-card__avatar"><img class="c-trade-card__avatar-img" src="img/txs/11510735061.jpg" alt="头像">
+									<figure class="c-trade-card__avatar"><img class="c-trade-card__avatar-img" src="{{image}}" alt="头像">
 										<figcaption class="c-trade-card__avatar-caption" style="
     text-align: center;
-">盖世英雄</figcaption>
+">{{shopkeepname}}</figcaption>
 									</figure>
 									<div class="c-trade-card__synopsis">
-										<h4 class="c-trade-card__title"><a class="c-trade-card__link" target="_blank" href="demand-4694.html">【第一接单网】找信用卡商家，或者其他需要CPA推广的广告主</a></h4>
+										<h4 class="c-trade-card__title"><a class="c-trade-card__link" target="_blank" href="demand-4694.html">{{title}}</a></h4>
 										<div class="c-trade-card__desc"><span class="c-trade-card__desc-name">我们需要</span>
-											<ul class="c-trade-card__desc-list"><li class="list-inline-item c-trade-card__desc-item"><span class="c-trade-card__desc-tag">费用支持</span></li></ul>
+											<ul class="c-trade-card__desc-list"><li class="list-inline-item c-trade-card__desc-item"><span class="c-trade-card__desc-tag">{{shopclass}}</span></li></ul>
 										</div>
 										<div class="c-trade-card__desc"><span class="c-trade-card__desc-name">地区</span>
 											<ul class="c-trade-card__desc-list">
 												
-												<li class="list-inline-item c-trade-card__desc-item"><span class="c-trade-card__desc-tag">线上广告</span></li>	</ul>
+												<li class="list-inline-item c-trade-card__desc-item"><span class="c-trade-card__desc-tag">{{area}}</span></li>	</ul>
 											<!-- 卡片中靠右，包括企业认证，发帖人职位名称、发帖时间、帖子查看人数等-->
 										</div>
 									</div>
 								</div>
 								<div class="c-trade-card__status">
-							<div class="c-trade-card__certification" data-certification="true"> &nbsp;&nbsp; 商务BD</div>
+							<div class="c-trade-card__certification" data-certification="true"> &nbsp;&nbsp; </div>
 									
-									<div class="c-trade-card__syslog" style="margin-top:73px;"><span class="c-trade-card__time">2018-08-06 14:37:40</span><span class="c-trade-card__viewnum">1121</span></div>
+									<div class="c-trade-card__syslog" style="margin-top:73px;"><span class="c-trade-card__time">{{end_time}}</span><span class="c-trade-card__viewnum">{{count}}</span></div>
 								</div>
 							</div>
 						</li>
-
+				{{endif}}
+		{% endfor %}
 				
 				
 				
@@ -301,8 +299,8 @@
 								<a class="page-link c-pagination__page-link" href="http://www.mybdhome.com/?x1=&x2=&x3=&x4=&x5=&x11=7">7</a>
 							</li>	<li class=" page-item c-pagination__page-item">
 								<a class="page-link c-pagination__page-link" href="http://www.mybdhome.com/?x1=&x2=&x3=&x4=&x5=&x11=8">8</a>
-							</li>							
-				
+							</li>
+
 							<li class="page-item c-pagination__page-item">
 								<a class="page-link c-pagination__page-link" href="http://www.mybdhome.com/?x1=&x2=&x3=&x4=&x5=&x11=9">&#8943;</a>
 							</li>
@@ -317,7 +315,7 @@
 					<div class="c-trade-ad"><img class="c-trade-ad__img" src="img/bd3-3-1.png" alt="广告位"></div>
 					<nav class="c-trade-news c-trade-news--today">
 						<header class="c-trade-news__header">
-							<h3 class="c-trade-news__title">今日最热需求</h3></header>
+							<h3 class="c-trade-news__title">今日{{User.objects.filter(name=top1).last()}}{{User.objects.filter(name=top1).last()}}</h3></header>
 						<ol class="list-unstyled c-trade-news__nav-list">
 							
 							
@@ -326,22 +324,8 @@
 							
 							
 													<li class="c-trade-news__nav-item">
-								<a class="c-trade-news__nav-link" href="demand-5587.html">【铜爵】小说推广，提供费用，寻找大量流量渠道长期合作CPC（微信群控、公众号、朋友圈等）</a>
-							</li>	<li class="c-trade-news__nav-item">
-								<a class="c-trade-news__nav-link" href="demand-5580.html">【好想贷】提供品牌/服务支持，寻找公司个人代理商</a>
-							</li>	<li class="c-trade-news__nav-item">
-								<a class="c-trade-news__nav-link" href="demand-5568.html">【ETE以太地产】寻求PC端注册流量</a>
-							</li>	<li class="c-trade-news__nav-item">
-								<a class="c-trade-news__nav-link" href="demand-5582.html">【兴业银行商城】寻品牌商入驻-兴业银行生活商城</a>
-							</li>	<li class="c-trade-news__nav-item">
-								<a class="c-trade-news__nav-link" href="demand-5575.html">【米族金融】米族金融网贷金融合作</a>
-							</li>	<li class="c-trade-news__nav-item">
-								<a class="c-trade-news__nav-link" href="demand-5564.html">【红壶相声社/爸爸的航海日志/喜笑会】【红壶相声社/喜笑会/爸爸的航海日志儿童剧】提供相声、儿童剧等演出票务，寻求曝光置换、推广活动、资源</a>
-							</li>	<li class="c-trade-news__nav-item">
-								<a class="c-trade-news__nav-link" href="demand-5572.html">【金吉鸟健身连锁】提供线上推广、广告位，寻求线下资源</a>
-							</li>	<li class="c-trade-news__nav-item">
-								<a class="c-trade-news__nav-link" href="demand-5539.html">【孕期产后展】2018第三届国际月子健康博览会 全国月子中心行业联盟高峰论坛 （广州站）</a>
-							</li>						
+								<a class="c-trade-news__nav-link" href="demand-5587.html">{{title}}</a>
+							</li>
 		
 							
 							
@@ -351,25 +335,15 @@
 					</nav>
 					<nav class="c-trade-news c-trade-news--week">
 						<header class="c-trade-news__header">
-							<h3 class="c-trade-news__title">七天最热需求</h3></header>
+							<h3 class="c-trade-news__title">七天{{User.objects.filter(name=top2).last()}}{{User.objects.filter(name=top2).last()}}</h3></header>
 						<ol class="list-unstyled c-trade-news__nav-list">
+					{% for a in Publish  %}
+						{%if %}
 								<li class="c-trade-news__nav-item">
-								<a class="c-trade-news__nav-link" href="demand-5368.html">【陌狐优品】提供精美礼品，需要线上线下推广</a>
-							</li>	<li class="c-trade-news__nav-item">
-								<a class="c-trade-news__nav-link" href="demand-5430.html">【协赢天亿】哒哒英语！提供费用需求cpa渠道</a>
-							</li>	<li class="c-trade-news__nav-item">
-								<a class="c-trade-news__nav-link" href="demand-5353.html">【赤岛科技】银行直签信用卡高价寻量大渠道，资金支持</a>
-							</li>	<li class="c-trade-news__nav-item">
-								<a class="c-trade-news__nav-link" href="demand-5587.html">【铜爵】小说推广，提供费用，寻找大量流量渠道长期合作CPC（微信群控、公众号、朋友圈等）</a>
-							</li>	<li class="c-trade-news__nav-item">
-								<a class="c-trade-news__nav-link" href="demand-5484.html">【阅闲匠品】提供实物及优惠券，寻线上广告位</a>
-							</li>	<li class="c-trade-news__nav-item">
-								<a class="c-trade-news__nav-link" href="demand-5362.html">【信用卡】数十家信用卡招代理</a>
-							</li>	<li class="c-trade-news__nav-item">
-								<a class="c-trade-news__nav-link" href="demand-5417.html">【同城游】寻求线上推广合作，寻找线上流量置换。</a>
-							</li>	<li class="c-trade-news__nav-item">
-								<a class="c-trade-news__nav-link" href="demand-5356.html">【米易借款】找各类APP流量，提供费用支持，寻求CPA同业异业合作</a>
-							</li>						
+								<a class="c-trade-news__nav-link" href="demand-5368.html">{{title}}</a>
+							</li>
+						{% endif %}
+					{% endfor %}
 						</ol>
 					</nav>
 				</div>
