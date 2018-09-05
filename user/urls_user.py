@@ -15,4 +15,6 @@ urlpatterns = [
     url(r'^wallet/$', views_user.walllet),  # 我的钱袋
     url(r'^out/$', views_user.out),  # 退出登录
     url(r'^release/$', views_user.release),  # 发布合作信息
+    url(r'^career/$',views_user.career),#帐号设置的职业信息
+    url(r'^password/$',views_user.password),#帐号设置的修改密码
 ]
