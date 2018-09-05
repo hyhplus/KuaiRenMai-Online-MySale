@@ -1,25 +1,22 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link rel="stylesheet" href="../../static/css/bootstrap.css">
-		<link rel="stylesheet" href="../../static/css/main_002.css">
-			
-			
-				<link rel="stylesheet" href="../../static/css/main.css">
-			
-				<link rel="stylesheet" href="../../static/css/y.css">
-		  <link rel="icon" type="image/x-icon" href="http://www.mybdhome.com/favicon.ico">
-		<title>BD之家</title>
-
-<meta name="keywords" content="默认关键词">
-<meta name="description" content="默认描述">
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/main_002.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/y.css">
+    <link rel="icon" type="image/x-icon" href="http://www.mybdhome.com/favicon.ico">
+    <title>快人脉</title>
+    <meta name="keywords" content="默认关键词">
+    <meta name="description" content="默认描述">
 
     <script type="text/javascript">
         //这个 请选择 选项 加的很好。
-        var jiaArr = ["请选择","宠物", "房产", "二手市场","寻人寻物","我要人脉","本地生活"];
-        var exampleArr = [
+        var sort_1Arr = ["请选择","宠物", "房产", "二手市场","寻人寻物","我要人脉","本地生活"];
+        var sort_2Arr = [
             ["请选择"],
             ["出售宠物", "购买宠物"],
             ["我要租房", "我要转租", "我要合租"],
@@ -31,453 +28,309 @@
 
         window.onload = function () {
 
-            var selJia = document.getElementById("jia");
+            var selSort_1 = document.getElementById("sort_1");
             //申请空间
-            selJia.length = jiaArr.length;
+            selSort_1.length = sort_1Arr.length;
             //添加元素
-            for (var i = 0; i < jiaArr.length; i++) {
-                selJia.options[i].text = jiaArr[i];
-                selJia.options[i].value = jiaArr[i];
+            for (var i = 0; i < sort_1Arr.length; i++) {
+                selSort_1.options[i].text = sort_1Arr[i];
+                selSort_1.options[i].value = sort_1Arr[i];
             }
         }
 
-        function ChangeExampleSelect(index)
+        function ChangeSort_2Select(index)
         {
-            var selExa = document.getElementById("example");
+            var selExa = document.getElementById("sort_2");
 
-            selExa.length = exampleArr[index].length;
+            selExa.length = sort_2Arr[index].length;
 
-            for (var i = 0; i < exampleArr[index].length; i++)
+            for (var i = 0; i < sort_2Arr[index].length; i++)
             {
-                selExa.options[i].text = exampleArr[index][i];
-                selExa.options[i].value = exampleArr[index][i];
+                selExa.options[i].text = sort_2Arr[index][i];
+                selExa.options[i].value = sort_2Arr[index][i];
             }
         }
     </script>
 
-	</head>
+</head>
 
-	<body>
-		<div class="c-top-bar">
-			<div class="c-top-bar__nav">
-
-<div style="float:left;color: #fff;font-size: 14px;margin-top: 6px;">找合作,上BD之家
-</div>
-
-				<ul class="list-inline c-top-bar__nav-list">
-					
-										
-				<li class="list-inline-item c-top-bar__nav-item">
-					<a class="c-top-bar__nav-link" href="http://www.mybdhome.com/user/">...</a>
-					</li>
-					<li class="list-inline-item c-top-bar__nav-item">
-						<a class="c-top-bar__nav-link" href="http://www.mybdhome.com/user/message.html">
-							
-						
-							消息
-							
-						
-													</a>
-					</li>
-					
-					
-							
-				</ul>
-				
-				
-			</div>
-		</div>
-		<header class="c-page-header">
-			<nav class="c-page-header__nav">
-				<a class="c-page-header__logo" href="http://www.mybdhome.com/"><img class="c-page-header__logo-img" src="publish_files/logo.png" alt="企业Logo"></a>
-				<ul class="list-inline c-page-header__nav-list">
-					<li class="list-inline-item c-page-header__nav-item ">
-						<a class="c-page-header__nav-link" href="http://www.mybdhome.com/">异业大厅</a>
-					</li>
-					<li class="list-inline-item c-page-header__nav-item ">
-						<a class="c-page-header__nav-link" href="http://www.mybdhome.com/advertiser.html">广告主</a>
-					</li>
-					<li class="list-inline-item c-page-header__nav-item ">
-						<a class="c-page-header__nav-link" href="http://www.mybdhome.com/channel.html">渠道主</a>
-					</li>
-				</ul>
-				<form class="c-page-header__search-form" action="http://www.mybdhome.com/" method="get">
-					<input name="w" value="search" type="hidden">
-					<input class="c-page-header__search-field" placeholder="请输入您想搜索的内容" name="so"><button class="c-page-header__search-submit" style="
-    color: #ffffff;
+<body>
+    <div class="c-top-bar">
+        <div class="c-top-bar__nav">
+            <div style="float:left;color: #fff;font-size: 14px;margin-top: 6px;">找合作,上BD之家</div>
+            <ul class="list-inline c-top-bar__nav-list">
+                <li class="list-inline-item c-top-bar__nav-item">
+                    <a class="c-top-bar__nav-link" href="http://www.mybdhome.com/user/">...</a>
+                </li>
+                <li class="list-inline-item c-top-bar__nav-item">
+                    <a class="c-top-bar__nav-link" href="http://www.mybdhome.com/user/message.html">消息</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <header class="c-page-header">
+        <nav class="c-page-header__nav">
+            <a class="c-page-header__logo" href="http://www.mybdhome.com/"><img class="c-page-header__logo-img" src="publish_files/logo.png" alt="企业Logo"></a>
+            <ul class="list-inline c-page-header__nav-list">
+                <li class="list-inline-item c-page-header__nav-item ">
+                    <a class="c-page-header__nav-link" href="http://www.mybdhome.com/">异业大厅</a>
+                </li>
+                <li class="list-inline-item c-page-header__nav-item ">
+                    <a class="c-page-header__nav-link" href="http://www.mybdhome.com/advertiser.html">广告主</a>
+                </li>
+                <li class="list-inline-item c-page-header__nav-item ">
+                    <a class="c-page-header__nav-link" href="http://www.mybdhome.com/channel.html">渠道主</a>
+                </li>
+            </ul>
+            <form class="c-page-header__search-form" action="http://www.mybdhome.com/" method="get">
+                <input name="w" value="search" type="hidden">
+                <input class="c-page-header__search-field" placeholder="请输入您想搜索的内容" name="so"><button class="c-page-header__search-submit" style="
+color: #ffffff;
 "> </button></form>
-				<a class="c-page-header__new-post" href="http://www.mybdhome.com/release.html">免费发布合作</a>
-			</nav>
-		</header>
+            <a class="c-page-header__new-post" href="http://www.mybdhome.com/release.html">免费发布合作</a>
+        </nav>
+    </header>
 		
 		
-		<link rel="stylesheet" href="../../static/css/bootstrap.css">
-		<link rel="stylesheet" href="../../static/css/main_002.css">
-		<link rel="stylesheet" href="../../static/css/flatpickr.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/main_002.css">
+    <link rel="stylesheet" href="/static/css/flatpickr.css">
 		
 		<main class="page-main">
 			<div class="c-new-post">
 				<header class="c-new-post__header">
 					<h1 class="c-new-post__title">需求发布</h1></header>
-				<form method="post" action="advertiserw.html" enctype="multipart/form-data">
+				<form method="post" action="pub/publish_handler/" enctype="multipart/form-data">
 					<div class="c-new-post__form-wrapper">
-						<div class="c-new-post__form-field c-new-post__form-field--post-title is-required"><label class="c-new-post__field-name" for="post-title">帖子标题</label><input class="c-new-post__field-input" id="post-title" name="zname" placeholder="示例：[我要租房]东莞东城寻求出租屋" maxlength="50" required=""></div>
+						<div class="c-new-post__form-field c-new-post__form-field--post-title is-required"><label class="c-new-post__field-name" for="post-title">帖子标题</label><input class="c-new-post__field-input" id="post-title" name="title" placeholder="示例：[我要租房]东莞东城寻求出租屋" maxlength="50" required=""></div>
 						<div class="c-new-post__form-field c-new-post__form-field--post-title is-required"><label class="c-new-post__field-name" for="post-title">发布分区</label>
-        				<select id="jia" onchange="ChangeExampleSelect(this.selectedIndex)">
-
+        				<select id="sort_1" name="sort_1" class="c-new-post__select-option" onchange="ChangeSort_2Select(this.selectedIndex)">
         				</select>
-        				<select id="example">
-
+        				<select id="sort_2" name="sort_2" class="c-new-post__select-option">
         				</select>
-
-
-
+                        </div>
 						<div class="c-new-post__form-field c-new-post__form-field--aim-area is-required"><label class="c-new-post__field-name">添加地域选择</label>
-
-								<select>
-  									<option value ="guangzhou">广州</option>
-									<option value ="shanghai">上海</option>
-									<option value="sanya">三亚</option>
-									<option value="beijing">北京</option>
-								</select>
-
-							
-					
-							<ul class="show-area"></ul>
-							
-							
-						<input class="c-new-post__field-input" id="chengqu" name="diqu2" placeholder="" style="display: none;">
+                            <select name="area"   required>
+                                <option selected="selected">请选择地域</option>
+                                <option value="1">广州</option>
+                                <option value="2">上海</option>
+                                <option value="3">三亚</option>
+                                <option value="4">北京</option>
+                            </select>
 						</div>
-						
-						
-						
 
-						
-						<div class="c-new-post__form-field c-new-post__form-field--wechat is-required"><label class="c-new-post__field-name" for="wechat">微信</label><input class="c-new-post__field-input" id="wechat" name="wechat" placeholder="请输入微信号" required=""></div>
-						<div class="c-new-post__form-field c-new-post__form-field--phone"><label class="c-new-post__field-name" for="phone">手机号</label><input class="c-new-post__field-input" id="phone" name="zphone" value="18826227545" placeholder="请输入电话号码" type="number"></div>
-						<div class="c-new-post__form-field c-new-post__form-field--qq"><label class="c-new-post__field-name" for="qq">QQ</label><input class="c-new-post__field-input" id="qq" name="zqq" placeholder="请输入QQ号码" type="number"></div>
+						<div class="c-new-post__form-field c-new-post__form-field--phone is-required"><label class="c-new-post__field-name" for="phone">手机号</label><input class="c-new-post__field-input" id="phone" name="tel" placeholder="请输入手机号码" required="" type="number"></div>
+						<div class="c-new-post__form-field c-new-post__form-field--wechat"><label class="c-new-post__field-name" for="wechat">微信号</label><input class="c-new-post__field-input" id="wechat" name="wechat"  placeholder="请输入微信号" ></div>
+						<div class="c-new-post__form-field c-new-post__form-field--qq"><label class="c-new-post__field-name" for="qq">QQ</label><input class="c-new-post__field-input" id="qq" name="qq" placeholder="请输入QQ号码" type="number"></div>
 					</div>
-						
-						
-						
-						
-						
-						
+
 					<div class="c-new-post__form-field c-new-post__form-field--upload-logo"><label class="c-new-post__field-name">上传图片</label>
-							<div class="c-new-post__entry-group" style="width: 460px;height: 130px;">
-								
-								
-
-									<label class="c-new-post__entry-name upload-image__label" for="iptfileupload" style=" width: 100px; height: 100px; padding-top: 15px; float: left;    margin-right: 20px;">选择+</label>
-									
-									
-									
-										<img src="publish_files/tx00.png" alt="" id="img" width="100" height="100">
-								
-									
-									
-									<div>
-
-
-										<input id="iptfileupload" onchange="show()" value="" style=" display: none; " name="txs" type="file">
-
-
-
-
-
-
-									</div>
-				
-							</div>
+                        <div class="c-new-post__entry-group" style="width: 460px;height: 130px;">
+                            <label class="c-new-post__entry-name upload-image__label" for="iptfileupload" style=" width: 100px; height: 100px; padding-top: 15px; float: left;    margin-right: 20px;">选择+</label>
+                            <img src="publish_files/tx00.png" alt="" id="img" width="100" height="100">
+                            <div>
+                                <input id="iptfileupload" onchange="show()" value="" style=" display: none; " name="image" type="file">
+                            </div>
+                        </div>
 					</div>
 
 
-						
-						
-						
-						
-						
-						
-			
-
-<script src="publish_files/hm.js"></script><script type="text/javascript">
- function getPath(obj,fileQuery,transImg) {
+<script src="/static/js/hm.js"></script><script type="text/javascript">
+    function getPath(obj,fileQuery,transImg) {
  
-  var imgSrc = '', imgArr = [], strSrc = '' ;
+        var imgSrc = '', imgArr = [], strSrc = '' ;
  
-  if(window.navigator.userAgent.indexOf("MSIE")>=1){ // IE浏览器判断
-  if(obj.select){
-   obj.select();
-   var path=document.selection.createRange().text;
-   alert(path) ;
-   obj.removeAttribute("src");
-   imgSrc = fileQuery.value ;
-   imgArr = imgSrc.split('.') ;
-   strSrc = imgArr[imgArr.length - 1].toLowerCase() ;
-   if(strSrc.localeCompare('jpg') === 0 || strSrc.localeCompare('jpeg') === 0 || strSrc.localeCompare('gif') === 0 || strSrc.localeCompare('png') === 0){
-   obj.setAttribute("src",transImg);
-   obj.style.filter=
-    "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+path+"', sizingMethod='scale');"; // IE通过滤镜的方式实现图片显示
-   }else{
+        if(window.navigator.userAgent.indexOf("MSIE")>=1){ // IE浏览器判断
+            if(obj.select){
+                obj.select();
+                var path=document.selection.createRange().text;
+                alert(path) ;
+                obj.removeAttribute("src");
+                imgSrc = fileQuery.value ;
+                imgArr = imgSrc.split('.') ;
+                strSrc = imgArr[imgArr.length - 1].toLowerCase() ;
+                if(strSrc.localeCompare('jpg') === 0 || strSrc.localeCompare('jpeg') === 0 || strSrc.localeCompare('gif') === 0 || strSrc.localeCompare('png') === 0){
+                    obj.setAttribute("src",transImg);
+                    obj.style.filter= "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+path+"', sizingMethod='scale');"; // IE通过滤镜的方式实现图片显示
+                }else{
    //try{
-   throw new Error('File type Error! please image file upload..'); 
+                    throw new Error('File type Error! please image file upload..');
    //}catch(e){
    // alert('name: ' + e.name + 'message: ' + e.message) ;
    //}
-   }
-  }else{
+                }
+            }else{
    // alert(fileQuery.value) ;
-   imgSrc = fileQuery.value ;
-   imgArr = imgSrc.split('.') ;
-   strSrc = imgArr[imgArr.length - 1].toLowerCase() ;
-   if(strSrc.localeCompare('jpg') === 0 || strSrc.localeCompare('jpeg') === 0 || strSrc.localeCompare('gif') === 0 || strSrc.localeCompare('png') === 0){
-   obj.src = fileQuery.value ;
-   }else{
+                imgSrc = fileQuery.value ;
+                imgArr = imgSrc.split('.') ;
+                strSrc = imgArr[imgArr.length - 1].toLowerCase() ;
+                if(strSrc.localeCompare('jpg') === 0 || strSrc.localeCompare('jpeg') === 0 || strSrc.localeCompare('gif') === 0 || strSrc.localeCompare('png') === 0){
+                    obj.src = fileQuery.value ;
+                }else{
    //try{
-   throw new Error('File type Error! please image file upload..') ;
+                    throw new Error('File type Error! please image file upload..') ;
    //}catch(e){
    // alert('name: ' + e.name + 'message: ' + e.message) ;
    //}
-   }
+                }
  
-  }
+            }
  
-  } else{
-  var file =fileQuery.files[0];
-  var reader = new FileReader();
-  reader.onload = function(e){
+         } else{
+            var file =fileQuery.files[0];
+            var reader = new FileReader();
+            reader.onload = function(e){
  
-   imgSrc = fileQuery.value ;
-   imgArr = imgSrc.split('.') ;
-   strSrc = imgArr[imgArr.length - 1].toLowerCase() ;
-   if(strSrc.localeCompare('jpg') === 0 || strSrc.localeCompare('jpeg') === 0 || strSrc.localeCompare('gif') === 0 || strSrc.localeCompare('png') === 0){
-   obj.setAttribute("src", e.target.result) ;
-   }else{
+            imgSrc = fileQuery.value ;
+            imgArr = imgSrc.split('.') ;
+            strSrc = imgArr[imgArr.length - 1].toLowerCase() ;
+            if(strSrc.localeCompare('jpg') === 0 || strSrc.localeCompare('jpeg') === 0 || strSrc.localeCompare('gif') === 0 || strSrc.localeCompare('png') === 0){
+                obj.setAttribute("src", e.target.result) ;
+            }else{
    //try{
-   throw new Error('File type Error! please image file upload..') ;
+                throw new Error('File type Error! please image file upload..') ;
    //}catch(e){
    // alert('name: ' + e.name + 'message: ' + e.message) ;
    //}
-   }
+            }
  
    // alert(e.target.result); 
-  }
-  reader.readAsDataURL(file);
-  }
- }
+            }
+                reader.readAsDataURL(file);
+        }
+    }
  
- function show(){
-  //以下即为完整客户端路径
-  var file_img=document.getElementById("img"),
-  iptfileupload = document.getElementById('iptfileupload') ;
-  getPath(file_img,iptfileupload,file_img) ;
- }
+    function show(){
+//以下即为完整客户端路径
+        var file_img=document.getElementById("img"),
+        iptfileupload = document.getElementById('iptfileupload') ;
+        getPath(file_img,iptfileupload,file_img) ;
+    }
  </script>
 
-
-
-
-
-			
+                    <div class="c-new-post__form-field c-new-post__form-field--deadline is-required"><label class="c-new-post__field-name" >截止时间</label>
+                        <input class="c-new-post__field-input " id="timer1" name="end_time" placeholder="请选择日期时间" onclick="timer()" readonly="readonly" required="">
+                    </div>
+                    <div class="c-new-post__form-field c-new-post__form-field--money"><label class="c-new-post__field-name" for="money">赏金</label><input class="c-new-post__field-input" id="money" name="reward" placeholder="请输入赏金数值" type="number"></div>
+                    <script>
+				        function timer(){
+					        $("#schedule-box").show();
+				        }
+			        </script>
 						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						<div class="c-new-post__form-field c-new-post__form-field--deadline is-required"><label class="c-new-post__field-name" >截止时间</label>
-							
-							
-							<input class="c-new-post__field-input " id="timer1" name="jztime" placeholder="请选择日期时间" onclick="timer()" readonly="readonly" required="">
-						</div>
-
-					<div class="c-new-post__form-field c-new-post__form-field--money"><label class="c-new-post__field-name" for="money">赏金</label><input class="c-new-post__field-input" id="money" name="zmoney" placeholder="请输入赏金数值" type="number"></div>
-			<script>
-				function timer(){
-					
-					$("#schedule-box").show();
-					
-					
-				}
-			</script>			
-						
-						
-						
-						
-						<div class="c-new-post__form-field c-new-post__form-field--deadline is-required">
-						
-							<div id="schedule-box" class="boxshaw" style="display: none;"><div class="schedule-hd"><div><span class="arrow icon iconfont icon-116leftarrowheads" id="prevYear"></span><span class="arrow icon iconfont icon-112leftarrowhead" id="prevMonth"></span></div><div class="today">2018-09-01</div><div><span class="arrow icon iconfont icon-111arrowheadright" id="nextMonth"></span><span class="arrow icon iconfont icon-115rightarrowheads" id="nextYear"></span></div></div><ul class="week-ul ul-box"><li>日</li><li>一</li><li>二</li><li>三</li><li>四</li><li>五</li><li>六</li></ul><ul class="schedule-bd ul-box"><li class="other-month"><span class="dayStyle">26</span></li><li class="other-month"><span class="dayStyle">27</span></li><li class="other-month"><span class="dayStyle">28</span></li><li class="other-month"><span class="dayStyle">29</span></li><li class="other-month"><span class="dayStyle">30</span></li><li class="other-month"><span class="dayStyle">31</span></li><li class="current-month"><span title="2018-09-01" class="currentDate dayStyle today-flag">1</span></li><li class="current-month"><span title="2018-09-02" class="currentDate dayStyle ">2</span></li><li class="current-month"><span title="2018-09-03" class="currentDate dayStyle ">3</span></li><li class="current-month"><span title="2018-09-04" class="currentDate dayStyle ">4</span></li><li class="current-month"><span title="2018-09-05" class="currentDate dayStyle ">5</span></li><li class="current-month"><span title="2018-09-06" class="currentDate dayStyle ">6</span></li><li class="current-month"><span title="2018-09-07" class="currentDate dayStyle ">7</span></li><li class="current-month"><span title="2018-09-08" class="currentDate dayStyle ">8</span></li><li class="current-month"><span title="2018-09-09" class="currentDate dayStyle ">9</span></li><li class="current-month"><span title="2018-09-10" class="currentDate dayStyle ">10</span></li><li class="current-month"><span title="2018-09-11" class="currentDate dayStyle ">11</span></li><li class="current-month"><span title="2018-09-12" class="currentDate dayStyle ">12</span></li><li class="current-month"><span title="2018-09-13" class="currentDate dayStyle ">13</span></li><li class="current-month"><span title="2018-09-14" class="currentDate dayStyle ">14</span></li><li class="current-month"><span title="2018-09-15" class="currentDate dayStyle ">15</span></li><li class="current-month"><span title="2018-09-16" class="currentDate dayStyle ">16</span></li><li class="current-month"><span title="2018-09-17" class="currentDate dayStyle ">17</span></li><li class="current-month"><span title="2018-09-18" class="currentDate dayStyle ">18</span></li><li class="current-month"><span title="2018-09-19" class="currentDate dayStyle ">19</span></li><li class="current-month"><span title="2018-09-20" class="currentDate dayStyle ">20</span></li><li class="current-month"><span title="2018-09-21" class="currentDate dayStyle ">21</span></li><li class="current-month"><span title="2018-09-22" class="currentDate dayStyle ">22</span></li><li class="current-month"><span title="2018-09-23" class="currentDate dayStyle ">23</span></li><li class="current-month"><span title="2018-09-24" class="currentDate dayStyle ">24</span></li><li class="current-month"><span title="2018-09-25" class="currentDate dayStyle ">25</span></li><li class="current-month"><span title="2018-09-26" class="currentDate dayStyle ">26</span></li><li class="current-month"><span title="2018-09-27" class="currentDate dayStyle ">27</span></li><li class="current-month"><span title="2018-09-28" class="currentDate dayStyle ">28</span></li><li class="current-month"><span title="2018-09-29" class="currentDate dayStyle ">29</span></li><li class="current-month"><span title="2018-09-30" class="currentDate dayStyle ">30</span></li><li class="other-month"><span class="dayStyle">1</span></li><li class="other-month"><span class="dayStyle">2</span></li><li class="other-month"><span class="dayStyle">3</span></li><li class="other-month"><span class="dayStyle">4</span></li><li class="other-month"><span class="dayStyle">5</span></li><li class="other-month"><span class="dayStyle">6</span></li></ul></div>
-						
-						
-						</div>	
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-
-
-
-
-
-
-
-
-
-
+                    <div class="c-new-post__form-field c-new-post__form-field--deadline is-required">
+                        <div id="schedule-box" class="boxshaw" style="display: none;"><div class="schedule-hd"><div><span class="arrow icon iconfont icon-116leftarrowheads" id="prevYear"></span><span class="arrow icon iconfont icon-112leftarrowhead" id="prevMonth"></span></div><div class="today">2018-09-01</div><div><span class="arrow icon iconfont icon-111arrowheadright" id="nextMonth"></span><span class="arrow icon iconfont icon-115rightarrowheads" id="nextYear"></span></div></div><ul class="week-ul ul-box"><li>日</li><li>一</li><li>二</li><li>三</li><li>四</li><li>五</li><li>六</li></ul><ul class="schedule-bd ul-box"><li class="other-month"><span class="dayStyle">26</span></li><li class="other-month"><span class="dayStyle">27</span></li><li class="other-month"><span class="dayStyle">28</span></li><li class="other-month"><span class="dayStyle">29</span></li><li class="other-month"><span class="dayStyle">30</span></li><li class="other-month"><span class="dayStyle">31</span></li><li class="current-month"><span title="2018-09-01" class="currentDate dayStyle today-flag">1</span></li><li class="current-month"><span title="2018-09-02" class="currentDate dayStyle ">2</span></li><li class="current-month"><span title="2018-09-03" class="currentDate dayStyle ">3</span></li><li class="current-month"><span title="2018-09-04" class="currentDate dayStyle ">4</span></li><li class="current-month"><span title="2018-09-05" class="currentDate dayStyle ">5</span></li><li class="current-month"><span title="2018-09-06" class="currentDate dayStyle ">6</span></li><li class="current-month"><span title="2018-09-07" class="currentDate dayStyle ">7</span></li><li class="current-month"><span title="2018-09-08" class="currentDate dayStyle ">8</span></li><li class="current-month"><span title="2018-09-09" class="currentDate dayStyle ">9</span></li><li class="current-month"><span title="2018-09-10" class="currentDate dayStyle ">10</span></li><li class="current-month"><span title="2018-09-11" class="currentDate dayStyle ">11</span></li><li class="current-month"><span title="2018-09-12" class="currentDate dayStyle ">12</span></li><li class="current-month"><span title="2018-09-13" class="currentDate dayStyle ">13</span></li><li class="current-month"><span title="2018-09-14" class="currentDate dayStyle ">14</span></li><li class="current-month"><span title="2018-09-15" class="currentDate dayStyle ">15</span></li><li class="current-month"><span title="2018-09-16" class="currentDate dayStyle ">16</span></li><li class="current-month"><span title="2018-09-17" class="currentDate dayStyle ">17</span></li><li class="current-month"><span title="2018-09-18" class="currentDate dayStyle ">18</span></li><li class="current-month"><span title="2018-09-19" class="currentDate dayStyle ">19</span></li><li class="current-month"><span title="2018-09-20" class="currentDate dayStyle ">20</span></li><li class="current-month"><span title="2018-09-21" class="currentDate dayStyle ">21</span></li><li class="current-month"><span title="2018-09-22" class="currentDate dayStyle ">22</span></li><li class="current-month"><span title="2018-09-23" class="currentDate dayStyle ">23</span></li><li class="current-month"><span title="2018-09-24" class="currentDate dayStyle ">24</span></li><li class="current-month"><span title="2018-09-25" class="currentDate dayStyle ">25</span></li><li class="current-month"><span title="2018-09-26" class="currentDate dayStyle ">26</span></li><li class="current-month"><span title="2018-09-27" class="currentDate dayStyle ">27</span></li><li class="current-month"><span title="2018-09-28" class="currentDate dayStyle ">28</span></li><li class="current-month"><span title="2018-09-29" class="currentDate dayStyle ">29</span></li><li class="current-month"><span title="2018-09-30" class="currentDate dayStyle ">30</span></li><li class="other-month"><span class="dayStyle">1</span></li><li class="other-month"><span class="dayStyle">2</span></li><li class="other-month"><span class="dayStyle">3</span></li><li class="other-month"><span class="dayStyle">4</span></li><li class="other-month"><span class="dayStyle">5</span></li><li class="other-month"><span class="dayStyle">6</span></li></ul></div>
+                    </div>
 
 <script>
 
 function checkedas(a,b){  
 
-
-
 	var ttz = "xuyao";
     var tts = "xuyaos";
 
 
-
-
-if(document.getElementById(ttz + b).checked){
+    if(document.getElementById(ttz + b).checked){
    
    
 //选中
-var el = $('#' + tts).val(); 
+        var el = $('#' + tts).val();
 
-if(el == ""){
-	$('#' +tts).val(el + a);
-}else{
-	$('#'+ tts).val(el + " " + a);
-}
-
-
-   
-   
-}else{
-	
+        if(el == ""){
+	        $('#' +tts).val(el + a);
+        }else{
+	        $('#'+ tts).val(el + " " + a);
+        }
+    }else{
 	//取消
-
-var el = $('#' + tts).val(); 
-el = el.replace(a,'');
-$('#' + tts).val(el);
+        var el = $('#' + tts).val();
+        el = el.replace(a,'');
+        $('#' + tts).val(el);
 	
-}
-
-
-
-    
+    }
      
 }  
 </script>
 
-
-
-
-
-		<link rel="stylesheet" href="publish_files/font_234130_nem7eskcrkpdgqfr.css">
-	<style>
-		*{
-			margin: 0;
-			padding: 0;
-		}
-		ul{
-			list-style: none;
-		}
-		#schedule-box{
-			width: 320px;
+                    <link rel="stylesheet" href="/static/css/font_234130_nem7eskcrkpdgqfr.css">
+                    <style>
+                        *{
+                            margin: 0;
+                            padding: 0;
+                        }
+                        ul{
+                            list-style: none;
+                        }
+                        #schedule-box{
+                            width: 320px;
 			/*margin: 0 auto;*/
-			padding: 35px 20px;
-			font-size: 13px;
-			    margin-left: 122px;
-		}
-		.schedule-hd{
-			display: flex;
-			justify-content: space-between;
-			padding: 0 15px;
-		}
-		.today{
-			flex: 1;
-			text-align: center;
-		}
-		.ul-box{
-			overflow: hidden;
-		}
-		.ul-box > li{
-			float: left;
-			width: 14.28%;
-			text-align: center;
-			padding: 5px 0;
-		}
-		.other-month{
-			color: #999999;
-		}
-		.current-month{
-			color: #333333;
-		}
-		.today-style{
-			border-radius: 50%;
-			background: #58d321;
-		}
-		.arrow{
-			cursor: pointer;
-		}
-		.dayStyle{
-			display: inline-block;
-			width: 35px;
-			height: 35px;
-			border-radius: 50%;
-			text-align: center;
-			line-height: 35px;
-			cursor: pointer;
-		}
-		.current-month > .dayStyle:hover{
-			background: #00BDFF;
-			color: #ffffff;
-		}
-		.today-flag{
-			background: #dde0e0;
-			color: #fff;
-		}
-		.boxshaw{
-			box-shadow: 2px 2px 15px 2px #e3e3e3;
-		}
-		.selected-style {
-			background: #00BDFF;
-			color: #ffffff;
-		}
-		#h3Ele{
-			text-align: center;
-			padding: 10px;
-		}
-	</style>
+                            padding: 35px 20px;
+                            font-size: 13px;
+                            margin-left: 122px;
+                        }
+                        .schedule-hd{
+                            display: flex;
+                            justify-content: space-between;
+                            padding: 0 15px;
+                        }
+                        .today{
+                            flex: 1;
+                            text-align: center;
+                        }
+                        .ul-box{
+                            overflow: hidden;
+                        }
+                        .ul-box > li{
+                            float: left;
+                            width: 14.28%;
+                            text-align: center;
+                            padding: 5px 0;
+                        }
+                        .other-month{
+                            color: #999999;
+                        }
+                        .current-month{
+                            color: #333333;
+                        }
+                        .today-style{
+                            border-radius: 50%;
+                            background: #58d321;
+                        }
+                        .arrow{
+                            cursor: pointer;
+                        }
+                        .dayStyle{
+                            display: inline-block;
+                            width: 35px;
+                            height: 35px;
+                            border-radius: 50%;
+                            text-align: center;
+                            line-height: 35px;
+                            cursor: pointer;
+                        }
+                        .current-month > .dayStyle:hover{
+                            background: #00BDFF;
+                            color: #ffffff;
+                        }
+                        .today-flag{
+                            background: #dde0e0;
+                            color: #fff;
+                        }
+                        .boxshaw{
+                            box-shadow: 2px 2px 15px 2px #e3e3e3;
+                        }
+                        .selected-style {
+                            background: #00BDFF;
+                            color: #ffffff;
+                        }
+                        #h3Ele{
+                            text-align: center;
+                            padding: 10px;
+                        }
+                    </style>
 
 
-
-<script src="publish_files/schedule.js"></script>
+<script src="/static/js/schedule.js"></script>
 <script>
 	var mySchedule = new Schedule({
 		el: '#schedule-box',
@@ -504,104 +357,68 @@ $('#' + tts).val(el);
 		}
 
 	});
-</script>				
-						
-
-
-	<input class="c-new-post__field-input" id="tigongs" name="tigongs" placeholder="" style="display: none;">
-
-
-								
-							</div>
-						<div>
-						
-						
-
-						
-						
-
-						
-							<div class="c-new-post__form-field c-new-post__form-field--brand-owner is-required"><label class="c-new-post__field-name">增值服务</label>
-							<div class="c-new-post__entry-group">
-								<div class="c-new-post__entry-item"><input class="c-new-post__entry-check" id="brand-owner1" name="qudao1" value="1" type="checkbox"><label class="c-new-post__entry-name" for="brand-owner1">置顶</label></div>
-								<div class="c-new-post__entry-item"><input class="c-new-post__entry-check" id="brand-owner2" name="qudao2" value="2" type="checkbox"><label class="c-new-post__entry-name" for="brand-owner2">刷新</label></div>
+</script>
+                    <div>
+                        <div class="c-new-post__form-field c-new-post__form-field--brand-owner "><label class="c-new-post__field-name">增值服务</label>
+                            <div class="c-new-post__entry-group">
+								<div class="c-new-post__entry-item"><input class="c-new-post__entry-check" id="brand-owner1" name="is_top" value="True" type="checkbox"><label class="c-new-post__entry-name" for="brand-owner1">置顶</label></div>
+								<div class="c-new-post__entry-item"><input class="c-new-post__entry-check" id="brand-owner2" name="is_flush" value="True" type="checkbox"><label class="c-new-post__entry-name" for="brand-owner2">刷新</label></div>
 							</div>
 						</div>
-						
-						
-						
-						
-						
-						
-						
-						<div class="c-new-post__form-field c-new-post__form-field--improtant is-required"><label class="c-new-post__field-name" for="important">需求详情</label><textarea class="c-new-post__field-input c-new-post__field-textarea" id="important" name="important" placeholder="请完善事项说明"></textarea></div><button class="c-btn c-btn-theme c-btn-radius c-new-post__form-submit">发布</button></div>
-				
-			</form>
-		</div>
-		</main>
-		
 
-
-
-<script src="../../static/js/jquery.js"></script>
-
-
-		<script src="../../static/js/distpicker.js"></script>
-		<script src="../../static/js/flatpickr.js"></script>
-	<script src="../../static/js/picker.js"></script>
-	
+						<div class="c-new-post__form-field c-new-post__form-field--improtant is-required">
+                            <label class="c-new-post__field-name" for="important">需求详情</label>
+                            <textarea class="c-new-post__field-input c-new-post__field-textarea" id="important" name="detail" placeholder="请完善事项说明"></textarea>
+                        </div>
+                        <button class="c-btn c-btn-theme c-btn-radius c-new-post__form-submit" type="submit">发布</button>
+                    </div>
+                </form>
+            </div>
+        </main>
 
 
 
 
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/distpicker.js"></script>
+    <script src="/static/js/flatpickr.js"></script>
+	<script src="/static/js/picker.js"></script>
 
 
-
-
-
-
-
-
-
-
-
-			<footer class="c-page-footer">
-			<nav class="c-page-footer__row c-page-footer__about">
-				<a class="c-page-footer__text c-page-footer__link" href="http://www.mybdhome.com/">首页&nbsp;/</a>
-				<a class="c-page-footer__text c-page-footer__link" href="http://www.mybdhome.com/disclaimer.html">&nbsp;免责声明&nbsp;/</a>
-				<a class="c-page-footer__text c-page-footer__link" href="http://www.mybdhome.com/about.html">&nbsp;关于我们</a>
-			</nav>
-			<p class="c-page-footer__row c-pagte-footer__contact"><span class="c-page-footer__contact-title c-page-footer__text">联系我们&nbsp;|</span><span class="c-page-footer__text">&nbsp;客服QQ:&nbsp;623690500&nbsp;/</span><span class="c-page-footer__text">&nbsp;联系电话:&nbsp;027-87780143 （广告推销勿扰）&nbsp;/</span><span class="c-page-footer__text">&nbsp;地址:&nbsp;武汉市洪山区书城路17号&nbsp;</span></p>
+    <footer class="c-page-footer">
+    <nav class="c-page-footer__row c-page-footer__about">
+        <a class="c-page-footer__text c-page-footer__link" href="http://www.mybdhome.com/">首页&nbsp;/</a>
+        <a class="c-page-footer__text c-page-footer__link" href="http://www.mybdhome.com/disclaimer.html">&nbsp;免责声明&nbsp;/</a>
+        <a class="c-page-footer__text c-page-footer__link" href="http://www.mybdhome.com/about.html">&nbsp;关于我们</a>
+    </nav>
+        <p class="c-page-footer__row c-pagte-footer__contact"><span class="c-page-footer__contact-title c-page-footer__text">联系我们&nbsp;|</span><span class="c-page-footer__text">&nbsp;客服QQ:&nbsp;623690500&nbsp;/</span><span class="c-page-footer__text">&nbsp;联系电话:&nbsp;027-87780143 （广告推销勿扰）&nbsp;/</span><span class="c-page-footer__text">&nbsp;地址:&nbsp;武汉市洪山区书城路17号&nbsp;</span></p>
 			
                     
-          
-          <hr class="c-page-footer__separator">
-			<p class="c-page-footer__row c-page-footer__certification"><span class="c-page-footer__text">武汉优上科技有限公司&nbsp;|</span><span class="c-page-footer__text">&nbsp;鄂ICP备17005716号-2</span></p>
-		</footer>
-		<script src="../../static/js/jquery.js"></script>
-		<script src="../../static/js/popper.js"></script>
-		<script src="../../static/js/bootstrap.js"></script>
+
+        <hr class="c-page-footer__separator">
+        <p class="c-page-footer__row c-page-footer__certification"><span class="c-page-footer__text">武汉优上科技有限公司&nbsp;|</span><span class="c-page-footer__text">&nbsp;鄂ICP备17005716号-2</span></p>
+    </footer>
+
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/popper.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
 
 
-<span style="display: none;">
+    <span style="display: none;">
 <!-- 统计代码 -->
-<script src="../../static/js/z_stat.js" language="JavaScript"></script><script src="../../static/js/core.js" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=1269900004" target="_blank" title="站长统计">站长统计</a>
-  
-  
-  <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?42bf2023872596714259937eaebb4ab5";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
+        <script src="/static/js/z_stat.js" language="JavaScript"></script>
+        <script src="/static/js/core.js" charset="utf-8" type="text/javascript"></script>
+        <a href="http://www.cnzz.com/stat/website.php?web_id=1269900004" target="_blank" title="站长统计">站长统计</a>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?42bf2023872596714259937eaebb4ab5";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    </span>
 
-  
-</span>
-
-
-	
-
-</body></html>
+</body>
+</html>
