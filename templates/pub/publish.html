@@ -34,7 +34,7 @@
             //添加元素
             for (var i = 0; i < sort_1Arr.length; i++) {
                 selSort_1.options[i].text = sort_1Arr[i];
-                selSort_1.options[i].value = sort_1Arr[i];
+                selSort_1.options[i].value = i;
             }
         }
 
@@ -47,7 +47,7 @@
             for (var i = 0; i < sort_2Arr[index].length; i++)
             {
                 selExa.options[i].text = sort_2Arr[index][i];
-                selExa.options[i].value = sort_2Arr[index][i];
+                selExa.options[i].value = i;
             }
         }
     </script>
@@ -110,8 +110,8 @@ color: #ffffff;
         				</select>
                         </div>
 						<div class="c-new-post__form-field c-new-post__form-field--aim-area is-required"><label class="c-new-post__field-name">添加地域选择</label>
-                            <select name="area"   required>
-                                <option selected="selected">请选择地域</option>
+                            <select name="area" id="area" >
+                                <option selected="selected" value="null">请选择地域</option>
                                 <option value="1">广州</option>
                                 <option value="2">上海</option>
                                 <option value="3">三亚</option>
@@ -208,10 +208,10 @@ color: #ffffff;
     }
  </script>
 
-                    <div class="c-new-post__form-field c-new-post__form-field--deadline is-required"><label class="c-new-post__field-name" >截止时间</label>
-                        <input class="c-new-post__field-input " id="timer1" name="end_time" placeholder="请选择日期时间" onclick="timer()" readonly="readonly" required="">
+                    <div class="c-new-post__form-field c-new-post__form-field--deadline is-required" ><label class="c-new-post__field-name" >截止时间</label>
+                        <input class="c-new-post__field-input " id="timer1" name="end_time" placeholder="请选择日期时间" onclick="timer()" readonly="readonly" >
                     </div>
-                    <div class="c-new-post__form-field c-new-post__form-field--money"><label class="c-new-post__field-name" for="money">赏金</label><input class="c-new-post__field-input" id="money" name="reward" placeholder="请输入赏金数值" type="number"></div>
+                    <div class="c-new-post__form-field c-new-post__form-field--money "><label class="c-new-post__field-name" for="money">赏金</label><input class="c-new-post__field-input" id="money" name="reward" placeholder="请输入赏金数值" type="number"></div>
                     <script>
 				        function timer(){
 					        $("#schedule-box").show();
@@ -368,7 +368,7 @@ function checkedas(a,b){
 
 						<div class="c-new-post__form-field c-new-post__form-field--improtant is-required">
                             <label class="c-new-post__field-name" for="important">需求详情</label>
-                            <textarea class="c-new-post__field-input c-new-post__field-textarea" id="important" name="detail" placeholder="请完善事项说明"></textarea>
+                            <textarea class="c-new-post__field-input c-new-post__field-textarea" id="important" name="detail" placeholder="请完善事项说明" required=""></textarea>
                         </div>
                         <button class="c-btn c-btn-theme c-btn-radius c-new-post__form-submit" type="submit">发布</button>
                     </div>
