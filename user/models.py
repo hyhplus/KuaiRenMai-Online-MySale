@@ -66,6 +66,7 @@ class Sort(models.Model):
     market = models.IntegerField(default=0)
     find = models.IntegerField(default=0)
     connect = models.IntegerField(default=0)
+    live = models.IntegerField(default=0)
     area = models.IntegerField(default=0)
 
     class Meta:
@@ -75,21 +76,23 @@ class Sort(models.Model):
 class Publish(models.Model):
     ''' 发布表 '''
     start_time = models.DateTimeField(auto_now=True)
-    end_time = models.DateTimeField()
+    end_time = models.DateField()
     reward = models.IntegerField()
 
-    title = models.CharField(max_length=32)
-    detail = models.TextField()
+    title = models.CharField(max_length=100)
+    detail = models.TextField(default='null')
     image = models.ImageField()
     tel = models.CharField(max_length=11)
+    qq = models.CharField(max_length=12,default='null')
+    wechat = models.CharField(max_length=15,default='null')
 
     count = models.IntegerField(default=0)
 
     is_top = models.BooleanField(default=False)
     is_flush = models.BooleanField(default=False)
 
-    sort = models.ForeignKey("Sort", on_delete=models.CASCADE)
-    publisher = models.ForeignKey("User", on_delete=models.CASCADE)
+    #sort = models.ForeignKey("Sort", on_delete=models.CASCADE)
+    #publisher = models.ForeignKey("User", on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'publish'
