@@ -86,23 +86,23 @@ class Sort(models.Model):
 class Publish(models.Model):
     ''' 发布表 '''
     start_time = models.DateTimeField(auto_now=True)
-    end_time = models.DateTimeField()
+    end_time = models.DateField()
     reward = models.IntegerField()
 
-    title = models.CharField(max_length=32)
-    shopkeepername =models.CharField(max_length=50)
-    detail = models.TextField()
+    title = models.CharField(max_length=100)
+    detail = models.TextField(default='null')
     image = models.ImageField()
     tel = models.CharField(max_length=11)
-    shopclass = models.CharField(max_length=50) #用来记录商家需求哪一类，好用来提取到页面显示
+    qq = models.CharField(max_length=12,default='null')
+    wechat = models.CharField(max_length=15,default='null')
 
     count = models.IntegerField(default=0)
 
     is_top = models.BooleanField(default=False)
     is_flush = models.BooleanField(default=False)
 
-    sort = models.ForeignKey("Sort", on_delete=models.CASCADE)
-    publisher = models.ForeignKey("User", on_delete=models.CASCADE)
+    #sort = models.ForeignKey("Sort", on_delete=models.CASCADE)
+    #publisher = models.ForeignKey("User", on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'publish'

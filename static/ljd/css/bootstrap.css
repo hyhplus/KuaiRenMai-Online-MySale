@@ -6301,6 +6301,7 @@ a.bg-dark:focus, a.bg-dark:hover {
     -ms-flex-line-pack: end !important;
         align-content: flex-end !important;
   }
+
   .align-content-sm-center {
     -ms-flex-line-pack: center !important;
         align-content: center !important;
@@ -8367,7 +8368,9 @@ a.text-dark:focus, a.text-dark:hover {
 .visible {
   visibility: visible !important;
 }
-
+.select {
+                  background: -webkit-linear-gradient(left top, rgba(122,156,233,.6) 30%, #FFE153 60%, #FF8000 80%, rgba(122,156,233,.6));
+}
 .invisible {
   visibility: hidden !important;
 }

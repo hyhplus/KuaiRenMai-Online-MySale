@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from user.models import Publish
-from user.models import Sort
+from mysale.user.models import Publish
+from mysale.user.models import Sort
 
 #coding=utf-8
 
@@ -121,9 +121,3 @@ def publish_handler(request):
         return render(request, 'pub/index.html')
     except Exception as e:
         return render(request, 'pub/publish.html')
-
-
-
-
-
-

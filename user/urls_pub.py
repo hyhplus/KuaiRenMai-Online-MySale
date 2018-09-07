@@ -8,10 +8,11 @@ urlpatterns = [
 
     url(r'index/$',views_pub.index),
     url(r'publish/$',views_pub.publish),
+    url(r'publish_handler/$',views_pub.publish_handler),
+
 
     url(r'reply/$', views_reply.reply),
     # url(r'^reply/post/(?P<publish_pk>[0-9]+)/$', views_reply.post_comment),
-
     url(r'comment/d(publish_pk)+/$', views_reply.post_comment),
 
 ]
