@@ -49,7 +49,7 @@ class UserDetail(models.Model):
 
     collect = models.CharField(max_length=64, default='')
 
-    user = models.OneToOneField("User", on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'user_info'
@@ -61,13 +61,9 @@ class UserDetail(models.Model):
 
 class Sort(models.Model):
     '''分类表'''
-    pet = models.IntegerField(default=0)
-    home = models.IntegerField(default=0)
-    market = models.IntegerField(default=0)
-    find = models.IntegerField(default=0)
-    connect = models.IntegerField(default=0)
-    live = models.IntegerField(default=0)
-    area = models.IntegerField(default=0)
+    sort_1 = models.CharField(max_length=20, default='')
+    sort_2 = models.CharField(max_length=20, default='')
+
 
     class Meta:
         db_table = 'sort'
@@ -80,30 +76,31 @@ class Publish(models.Model):
     reward = models.IntegerField()
 
     title = models.CharField(max_length=100)
-    detail = models.TextField(default='null')
+    detail = models.TextField(null=True)
     image = models.ImageField()
     tel = models.CharField(max_length=11)
-    qq = models.CharField(max_length=12,default='null')
-    wechat = models.CharField(max_length=15,default='null')
+    qq = models.CharField(max_length=12,null=True)
+    wechat = models.CharField(max_length=15,null=True)
 
     count = models.IntegerField(default=0)
 
     is_top = models.BooleanField(default=False)
     is_flush = models.BooleanField(default=False)
 
-    #sort = models.ForeignKey("Sort", on_delete=models.CASCADE)
-    #publisher = models.ForeignKey("User", on_delete=models.CASCADE)
+    sort = models.ForeignKey('Sort', on_delete=models.CASCADE,default='')
+    #publisher = models.ForeignKey('User', on_delete=models.CASCADE,default='')
 
+    area = models.IntegerField(default=0, null=True)
     class Meta:
         db_table = 'publish'
 
 
 class Reply(models.Model):
     ''' 回复表 '''
-    publish = models.ForeignKey("Publish", on_delete=models.CASCADE)
+    publish = models.ForeignKey('Publish', on_delete=models.CASCADE)
     message = models.TextField()
     is_select = models.BooleanField(default=False)
-    user = models.ForeignKey("User", on_delete=models.CASCADE)
+    user = models.ForeignKey('User', on_delete=models.CASCADE)
     submit_date = models.DateTimeField(auto_now=True)
 
     class Meta:
@@ -113,8 +110,8 @@ class Reply(models.Model):
 
 class Sure(models.Model):
     ''' 交易表 '''
-    publish = models.ForeignKey("Publish", on_delete=models.CASCADE)
-    reply = models.ForeignKey("Reply", on_delete=models.CASCADE)
+    publish = models.ForeignKey('Publish', on_delete=models.CASCADE)
+    reply = models.ForeignKey('Reply', on_delete=models.CASCADE)
 
     is_pub_sure = models.BooleanField(default=False)
     is_rep_sure = models.BooleanField(default=False)
