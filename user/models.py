@@ -59,7 +59,7 @@ class UserDetail(models.Model):
 
     collect = models.CharField(max_length=64, default='')
 
-    # user = models.OneToOneField("User", on_delete=models.CASCADE)
+    user = models.OneToOneField("User", on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'user_info'
@@ -77,7 +77,7 @@ class Sort(models.Model):
     find = models.IntegerField(default=0)
     connect = models.IntegerField(default=0)
     live = models.IntegerField(default=0)
-
+    area = models.IntegerField(default=0)
 
     class Meta:
         db_table = 'sort'
@@ -95,8 +95,6 @@ class Publish(models.Model):
     tel = models.CharField(max_length=11)
     qq = models.CharField(max_length=12,default='null')
     wechat = models.CharField(max_length=15,default='null')
-    area = models.IntegerField(default=0)
-
 
     count = models.IntegerField(default=0)
 
@@ -115,7 +113,7 @@ class Reply(models.Model):
     publish = models.ForeignKey("Publish", on_delete=models.CASCADE)
     message = models.TextField()
     is_select = models.BooleanField(default=False)
-    # user = models.ForeignKey("User", on_delete=models.CASCADE)
+    user = models.ForeignKey("User", on_delete=models.CASCADE)
     submit_date = models.DateTimeField(auto_now=True)
 
     class Meta:
