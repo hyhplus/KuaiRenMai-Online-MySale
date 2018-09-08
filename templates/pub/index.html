@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="/static/ljd/css/main.css">
 
 		<link rel="stylesheet" type="text/css" href="/static/ljd/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/static/ljd/css/bg.css" />
 		<script src="/static/js/jquery.min.js"></script>
 		<style>
 
@@ -15,6 +16,7 @@
 		<script type="text/javascript" src="/static/js/script.js"></script>
 			
 				<link rel="stylesheet" href="/static/ljd/css/main.main.css">
+
 			
 				<link rel="stylesheet" href="/static/ljd/css/y.css">
 		  <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -57,7 +59,7 @@
 		</div>
 		<header class="c-page-header">
 			<nav class="c-page-header__nav">
-				<a class="c-page-header__logo" ><img class="c-page-header__logo-img" src={{User.objects.filter(name=logopic).last()}}{{User.objects.filter(name=logopic).last()}} width="100" height="100" alt="首页"></a>
+				<a class="c-page-header__logo" ><img class="c-page-header__logo-img" src={{logopics.logopic}} width="100" height="100" alt="首页"></a>
 				<ul class="list-inline c-page-header__nav-list">
 					<li class="list-inline-item c-page-header__nav-item is-active">
 						<a class="c-page-header__nav-link" href="http://www.mybdhome.com/"></a>
@@ -80,10 +82,10 @@
 		
 			<main class="page-main page-main--trade">
 			<div class="carousel slide mx-auto c-carousel" id="carousel-banner" data-ride="carousel">
-				
+
 				<div class="carousel-inner c-carousel__inner">
-				<div class="active carousel-item c-carousel__item"><img class="d-block w-100 c-carousel__img" src={{User.objects.filter(name=lunpic1).last()}}{{User.objects.filter(name=lunpic1).last()}} alt=""width="1280" height="265"></div>
-				<div class="carousel-item c-carousel__item"><img class="d-block w-100 c-carousel__img" src={{User.objects.filter(name=lunpic2).last()}}{{User.objects.filter(name=lunpic2).last()}} alt=""width="1280" height="265"></div>
+				<div class="active carousel-item c-carousel__item"><img class="d-block w-100 c-carousel__img" src={{lunpic1s.lunpic1}} alt=""width="1280" height="265"></div>
+				<div class="carousel-item c-carousel__item"><img class="d-block w-100 c-carousel__img" src={{lunpic2s.lunpic2}} alt=""width="1280" height="265"></div>
 					<!--<div class="carousel-item c-carousel__item"><img class="d-block w-100 c-carousel__img" src="img/bd1.png" alt=""></div>
 					<div class="carousel-item c-carousel__item"><img class="d-block w-100 c-carousel__img" src="img/bd1.png" alt=""></div>-->
 				</div>
@@ -94,80 +96,81 @@
 			
 			
 			
-				<ul class="select">
+				<ul class="select" >
+                    <form action="">
 		<li class="select-list">
 			<dl id="select1">
 				<dt>宠物：</dt>
-				<dd class="select-all selected"><a href="#">全部</a></dd>
-				<dd><a href="#">出售宠物</a></dd>
-				<dd><a href="#">购买宠物</a></dd>
+				<dd class="select-all selected"><a href="#" name="a_a">全部</a></dd>
+				<dd><a href="#" name="a_b">出售宠物</a></dd>
+				<dd><a href="#" name="a_c">购买宠物</a></dd>
 
 			</dl>
 		</li>
 		<li class="select-list">
 			<dl id="select2">
 				<dt>房产：</dt>
-				<dd class="select-all selected"><a href="#">全部</a></dd>
-				<dd><a href="#">我要租房</a></dd>
-				<dd><a href="#">我要转租</a></dd>
-				<dd><a href="#">我要合租</a></dd>
+				<dd class="select-all selected"><a href="#" name="b_a">全部</a></dd>
+				<dd><a href="#" name="b_b">我要租房</a></dd>
+				<dd><a href="#" name="b_c">我要转租</a></dd>
+				<dd><a href="#" name="b_d">我要合租</a></dd>
 
 			</dl>
 		</li>
 		<li class="select-list">
 			<dl id="select3">
 				<dt>二手市场：</dt>
-				<dd class="select-all selected"><a href="#">全部</a></dd>
-				<dd><a href="#">手机电脑</a></dd>
-				<dd><a href="#">电动摩托车</a></dd>
-				<dd><a href="#">服装箱包</a></dd>
-				<dd><a href="#">数码产品</a></dd>
-				<dd><a href="#">家具家电</a></dd>
-				<dd><a href="#">票务图书</a></dd>
-				<dd><a href="#">其他</a></dd>
+				<dd class="select-all selected"><a href="#" name="c_a">全部</a></dd>
+				<dd><a href="#" name="c_b">手机电脑</a></dd>
+				<dd><a href="#" name="c_c">电动摩托车</a></dd>
+				<dd><a href="#" name="c_d">服装箱包</a></dd>
+				<dd><a href="#" name="c_e">数码产品</a></dd>
+				<dd><a href="#" name="c_f">家具家电</a></dd>
+				<dd><a href="#" name="c_g">票务图书</a></dd>
+				<dd><a href="#" name="c_h">其他</a></dd>
 			</dl>
 		</li>
 		<li class="select-list">
 			<dl id="select4">
 				<dt>寻人寻物：</dt>
-				<dd class="select-all selected"><a href="#">全部</a></dd>
-				<dd><a href="#">我要买</a></dd>
-				<dd><a href="#">我要卖</a></dd>
-				<dd><a href="#">寻人启事</a></dd>
-				<dd><a href="#">寻物启事</a></dd>
+				<dd class="select-all selected"><a href="#" name="d_a">全部</a></dd>
+				<dd><a href="#" name="d_b">我要买</a></dd>
+				<dd><a href="#" name="d_c">我要卖</a></dd>
+				<dd><a href="#" name="d_d">寻人启事</a></dd>
+				<dd><a href="#" name="d_e">寻物启事</a></dd>
 			</dl>
 		</li>
 		<li class="select-list">
 			<dl id="select5">
 				<dt>我要人脉：</dt>
-				<dd class="select-all selected"><a href="#">全部</a></dd>
-				<dd><a href="#">生活人脉</a></dd>
-				<dd><a href="#">其他人脉</a></dd>
-				<dd><a href="#">职场人脉</a></dd>
+				<dd class="select-all selected"><a href="#" name="e_a">全部</a></dd>
+				<dd><a href="#" name="e_b">生活人脉</a></dd>
+				<dd><a href="#" name="e_c">其他人脉</a></dd>
+				<dd><a href="#" name="e_d">职场人脉</a></dd>
 
 			</dl>
 		</li>
 		<li class="select-list">
 			<dl id="select6">
 				<dt>本地生活：</dt>
-				<dd class="select-all selected"><a href="#">全部</a></dd>
-				<dd><a href="#">美食优惠</a></dd>
-				<dd><a href="#">信用卡</a></dd>
-				<dd><a href="#">聚会活动</a></dd>
-				<dd><a href="#">贷款</a></dd>
+				<dd class="select-all selected"><a href="#" name="f_a">全部</a></dd>
+				<dd><a href="#" name="f_b">美食优惠</a></dd>
+				<dd><a href="#" name="f_c">信用卡</a></dd>
+				<dd><a href="#" name="f_d">聚会活动</a></dd>
+				<dd><a href="#" name="f_e">贷款</a></dd>
 			</dl>
 		</li>
 		<li class="select-list">
 			<dl id="select7">
 				<dt>地区选择：</dt>
-				<dd class="select-all selected"><a href="#">全部</a></dd>
-				<dd><a href="#">广州</a></dd>
-				<dd><a href="#">三亚</a></dd>
-				<dd><a href="#">香港</a></dd>
-				<dd><a href="#">北京</a></dd>
+				<dd class="select-all selected"><a href="#" name="g_a">全部</a></dd>
+				<dd><a href="#" name="g_b">广州</a></dd>
+				<dd><a href="#" name="g_c">三亚</a></dd>
+				<dd><a href="#" name="g_d">香港</a></dd>
+				<dd><a href="#" name="g_e">北京</a></dd>
 			</dl>
 		</li>
-
+                    </form>
 	</ul>
 	</div>
 </div>
@@ -202,7 +205,7 @@
 						
 				
 		{% for a in Publish  %}
-			{%if %}
+
 				<li class="c-trade-card-item">
 					<!-- 绝对定位，卡片左上角ribbon-->
 							<div class="c-trade-card-item__recommendation" data-recommendation="true">
@@ -215,20 +218,20 @@
 							<div class="c-trade-card">
 								<!-- 卡片中靠左，包括figure和info overview-->
 								<div class="c-trade-card__overview">
-									<figure class="c-trade-card__avatar"><img class="c-trade-card__avatar-img" src="{{image}}" alt="头像">
+									<figure class="c-trade-card__avatar"><img class="c-trade-card__avatar-img" src={{images.image}} alt="头像">
 										<figcaption class="c-trade-card__avatar-caption" style="
     text-align: center;
-">{{shopkeepname}}</figcaption>
+"></figcaption>
 									</figure>
 									<div class="c-trade-card__synopsis">
-										<h4 class="c-trade-card__title"><a class="c-trade-card__link" target="_blank" href="demand-4694.html">{{title}}</a></h4>
-										<div class="c-trade-card__desc"><span class="c-trade-card__desc-name">我们需要</span>
-											<ul class="c-trade-card__desc-list"><li class="list-inline-item c-trade-card__desc-item"><span class="c-trade-card__desc-tag">{{shopclass}}</span></li></ul>
-										</div>
+										<h4 class="c-trade-card__title"><a class="c-trade-card__link" target="_blank" href="demand-4694.html">{{titles.title}}</a></h4>
 										<div class="c-trade-card__desc"><span class="c-trade-card__desc-name">地区</span>
+											<ul class="c-trade-card__desc-list"><li class="list-inline-item c-trade-card__desc-item"><span class="c-trade-card__desc-tag">{{areas.area}}</span></li></ul>
+										</div>
+										<div class="c-trade-card__desc"><span class="c-trade-card__desc-name"></span>
 											<ul class="c-trade-card__desc-list">
 												
-												<li class="list-inline-item c-trade-card__desc-item"><span class="c-trade-card__desc-tag">{{area}}</span></li>	</ul>
+												<li class="list-inline-item c-trade-card__desc-item"><span class="c-trade-card__desc-tag"></span></li>	</ul>
 											<!-- 卡片中靠右，包括企业认证，发帖人职位名称、发帖时间、帖子查看人数等-->
 										</div>
 									</div>
@@ -236,7 +239,7 @@
 								<div class="c-trade-card__status">
 							<div class="c-trade-card__certification" data-certification="true"> &nbsp;&nbsp; </div>
 									
-									<div class="c-trade-card__syslog" style="margin-top:73px;"><span class="c-trade-card__time">{{end_time}}</span><span class="c-trade-card__viewnum">{{count}}</span></div>
+									<div class="c-trade-card__syslog" style="margin-top:73px;"><span class="c-trade-card__time">{{end_times.end_time}}</span><span class="c-trade-card__viewnum">{{counts.count}}</span></div>
 								</div>
 							</div>
 						</li>
@@ -315,19 +318,20 @@
 					<div class="c-trade-ad"><img class="c-trade-ad__img" src="img/bd3-3-1.png" alt="广告位"></div>
 					<nav class="c-trade-news c-trade-news--today">
 						<header class="c-trade-news__header">
-							<h3 class="c-trade-news__title">今日{{User.objects.filter(name=top1).last()}}{{User.objects.filter(name=top1).last()}}</h3></header>
+							<h3 class="c-trade-news__title">今日{{top1s.top1}}</h3></header>
 						<ol class="list-unstyled c-trade-news__nav-list">
 							
 							
 							
 							
-							
+						{% for a in Publish  %}
 							
 													<li class="c-trade-news__nav-item">
-								<a class="c-trade-news__nav-link" href="demand-5587.html">{{title}}</a>
+								<a class="c-trade-news__nav-link" href="demand-5587.html">{{titles.title}}</a>
 							</li>
-		
-							
+
+						{% endfor %}
+
 							
 							
 						
@@ -335,14 +339,14 @@
 					</nav>
 					<nav class="c-trade-news c-trade-news--week">
 						<header class="c-trade-news__header">
-							<h3 class="c-trade-news__title">七天{{User.objects.filter(name=top2).last()}}{{User.objects.filter(name=top2).last()}}</h3></header>
+							<h3 class="c-trade-news__title">七天{{top2s.top2}}</h3></header>
 						<ol class="list-unstyled c-trade-news__nav-list">
 					{% for a in Publish  %}
-						{%if %}
+
 								<li class="c-trade-news__nav-item">
-								<a class="c-trade-news__nav-link" href="demand-5368.html">{{title}}</a>
+								<a class="c-trade-news__nav-link" href="demand-5368.html">{{titles.title}}</a>
 							</li>
-						{% endif %}
+
 					{% endfor %}
 						</ol>
 					</nav>
